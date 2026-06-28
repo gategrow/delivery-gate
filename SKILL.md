@@ -1,11 +1,11 @@
 ---
 name: delivery-gate
-description: Stop hook that blocks Claude from finishing until quality checks pass. Detects rationalization patterns, stale learning logs (via mtime), and low disk space. Complements verification-loop by enforcing learning capture rather than just checking code quality.
+description: Stop hook that blocks Claude from finishing until quality checks pass. Detects contradictions, omissions, unverified assumptions, rationalization patterns, stale learning logs, and low disk space. Complements verification-loop by checking thinking quality rather than just code quality.
 ---
 
 # Delivery Gate — Self-Audit Stop Hook
 
-A Stop hook that blocks Claude from finishing when quality conditions aren't met. Unlike verification-loop (which checks build/test/lint), this system checks **session hygiene**: did Claude rationalize skipping work? Did it update learning logs after code changes? Is disk space dangerously low?
+A Stop hook that forces Claude to verify quality before it can finish. Unlike verification-loop (which checks build/test/lint), this system checks **thinking quality**: did Claude assume something untested? Did it rationalize skipping work? Did it skip documenting a lesson? Is disk space dangerously low?
 
 ## When to Activate
 
@@ -47,14 +47,14 @@ cp skills/delivery-gate/hooks/quality-gate.py ~/.claude/scripts/
 Add this block to your project or global CLAUDE.md:
 
 ```markdown
-## Session-End Checklist (收尾铁律)
+## 收尾铁律
 
-After complex tasks, verify before stopping:
-1. Self-Audit — contradictions, omissions, unverified assumptions, sugar-coating
-2. Teaching Output — why + how + core benefit (code tasks only)
-3. Delivery Gate — five libraries + disk space
-4. Capture — new facts→persona | failures→growth-log
-5. Output Index — record deliverable paths
+复杂任务结束必须自动输出:
+1. 自审 — 矛盾/遗漏/未验证假设/美化
+2. 教学 — 为什么做/如何做/核心收益 (仅代码任务)
+3. 交付门 — 五库+磁盘
+4. 沉淀 — 新事实→persona | 翻车→growth-log
+5. 产出索引
 ```
 
 ### 4. Create memory libraries
@@ -63,12 +63,12 @@ See `memory/README.md` for the five-library setup.
 
 ## How It Works
 
-The hook parses stdin (handles both raw transcript text and JSON with `transcript_path` for Claude Code Stop hooks). It:
-1. Scans for rationalization patterns (e.g., "this is a pre-existing issue", "skip tests for now")
+The hook receives the full transcript on stdin (handles both raw text and JSON with `transcript_path` for Claude Code Stop hooks). It:
+1. Detects rationalization patterns (e.g., "this is a pre-existing issue", "skip tests for now")
 2. Counts Edit/Write tool invocations to detect complex tasks
 3. Checks if five learning libraries were modified today (filesystem mtime)
 4. Checks home-directory filesystem disk space
-5. Blocks (exit 2) when complex tasks complete without learning capture or disk is critically low
+5. Blocks (exit 2) when complex tasks complete without learning capture, or disk is critically low
 
 ## Customization
 
