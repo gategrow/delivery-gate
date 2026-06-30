@@ -80,6 +80,17 @@ Manual health dashboard:
 python3 ~/.claude/scripts/config-health.py --check
 ```
 
+## Community
+
+delivery-gate is a community project — contributions and feedback welcome.
+
+- **Found a bug?** [Open an issue](https://github.com/YuhaoLin2005/delivery-gate/issues/new?template=bug_report.md)
+- **Have an idea?** [Request a feature](https://github.com/YuhaoLin2005/delivery-gate/issues/new?template=feature_request.md)
+- **Want to contribute?** Read [CONTRIBUTING.md](CONTRIBUTING.md) — good first issues are tagged and waiting
+- **Deep dive:** [checkgrow](https://github.com/YuhaoLin2005/checkgrow) explains the methodology behind the mechanical gate
+
+Maintained by [@YuhaoLin2005](https://github.com/YuhaoLin2005)
+
 ## Configuration
 
 ### config-health.py
