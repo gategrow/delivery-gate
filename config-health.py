@@ -44,6 +44,11 @@ HEALTH_LOG = os.path.expanduser('~/.claude/session-data/rule-health.jsonl')
 PENDING_FILE = 'pending-verifications.md'
 
 # ---- End Configuration ----
+# SYNC: Three code blocks below are duplicated in quality-gate.py:
+#   1. get_project_memory_dir() function
+#   2. JSON transcript_path parsing (in hook_mode)
+#   3. LIBS dictionary (in check_five_libs, already noted inline)
+# Update quality-gate.py when changing any of these.
 
 logging.basicConfig(
     stream=sys.stderr,
@@ -53,6 +58,7 @@ logging.basicConfig(
 log = logging.getLogger('config-health')
 
 
+# SYNC: Duplicated in quality-gate.py. Update both when changing.
 def get_project_memory_dir() -> Optional[str]:
     """Find current project's memory directory."""
     cwd = os.environ.get('CLAUDE_PROJECT_DIR', os.getcwd())
@@ -298,7 +304,8 @@ def hook_mode() -> None:
     # Stop-hook contract: echo stdin to stdout
     sys.stdout.write(raw)
 
-    # Resolve transcript
+    # Resolve transcript — decode structured JSON with transcript_path
+    # SYNC: Duplicated in quality-gate.py. Update both when changing.
     transcript = raw
     try:
         payload = json.loads(raw)

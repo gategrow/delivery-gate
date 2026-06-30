@@ -29,6 +29,8 @@ RATIONALIZE = [
 
 # Files to check for today's updates (relative to project memory dir)
 # Customize these to match your learning-capture workflow
+# SYNC: This LIBS dictionary is duplicated in config-health.py (check_five_libs).
+# Update both when changing.
 LIBS = {
     'ratings-tracker': 'ratings-tracker.md',
     'decisions-log': 'decisions/log.md',
@@ -52,6 +54,7 @@ logging.basicConfig(
 log = logging.getLogger('quality-gate')
 
 
+# SYNC: This function is duplicated in config-health.py. Update both when changing.
 def get_project_memory_dir() -> Optional[str]:
     """Find the current project's memory directory.
     Returns None if no memory directory exists for this project.
@@ -130,6 +133,8 @@ def main() -> None:
     sys.stdout.write(raw)
 
     # 0. Resolve transcript — newer Claude Code passes structured JSON with transcript_path
+    # SYNC: This JSON transcript_path parsing is duplicated in config-health.py.
+    # Update both when changing.
     transcript = raw
     try:
         payload = json.loads(raw)
