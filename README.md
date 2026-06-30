@@ -80,6 +80,16 @@ Manual health dashboard:
 python3 ~/.claude/scripts/config-health.py --check
 ```
 
+## Where Things Live
+
+This repo is the **Python reference implementation** — the easiest to read, test, and contribute to. For the full picture:
+
+| Aspect | Where |
+|---|---|
+| **Methodology** (why this design) | [checkgrow](https://github.com/YuhaoLin2005/checkgrow) — failure patterns, hybrid architecture, canonical framework |
+| **Reference implementation** (what you're reading) | **delivery-gate** (this repo) — full feature set (config-health + rationalization detection) |
+| **Production deployment** (Node.js, zero-config) | [ECC fork](https://github.com/YuhaoLin2005/ecc/blob/ec/ec.py) — auto-registering Stop hook, rationalization removed |
+
 ## Community
 
 delivery-gate is a community project — contributions and feedback welcome.
