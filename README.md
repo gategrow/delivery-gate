@@ -88,7 +88,7 @@ This repo is the **canonical Python reference implementation** — the easiest t
 |---|---|
 | **Methodology** (why this design) | [checkgrow](https://github.com/gategrow/checkgrow) — failure patterns, hybrid architecture, canonical framework |
 | **Canonical implementation** (what you're reading) | **delivery-gate** (this repo) — full feature set (config-health + rationalization detection) |
-| **Production deployment** (Node.js, zero-config) | [ECC fork](https://github.com/YuhaoLin2005/ecc/blob/ec/ec.py) — auto-registering Stop hook, rationalization removed |
+| **Production deployment** (Node.js, zero-config) | [ECC fork](https://github.com/YuhaoLin2005/ecc/blob/master/skills/delivery-gate/SKILL.md) — auto-registering Stop hook, rationalization removed |
 
 **Implementation differences are by design, not drift.** The Python reference has rationalization detection + config-health (full feature set). The Node.js production fork removes rationalization (regex on non-English transcripts is unreliable) and adds zero-config auto-registration. **If you're adding a feature, start here** — this is the canonical source for the gate logic. Changes flow from this repo to the ECC fork, not the reverse.
 

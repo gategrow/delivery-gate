@@ -181,7 +181,7 @@ def main() -> None:
         log.warning('\n'.join(parts))
 
     # 5. Block if complex task completed without learning capture
-    if is_complex and len(stale) >= len(LIBS):
+    if is_complex and len(stale) >= 3:
         log.warning('Blocked: complex task completed but no learning captured today.')
         log.warning('Update at least one library (e.g. growth-log) before stopping.')
         sys.exit(2)

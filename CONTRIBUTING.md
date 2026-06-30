@@ -22,7 +22,7 @@ python3 config-health.py --check
 
 # Quality gate (blocks when ≥3 libraries stale)
 python3 quality-gate.py
-echo $?  # 0 = pass, 1 = block
+echo $?  # 0 = pass, 2 = block
 
 # Hook mode (silent on success)
 python3 config-health.py --hook
@@ -34,7 +34,7 @@ python3 quality-gate.py
 - **Python 3.8+** — no f-string `=` debug syntax, no `str.removeprefix()`
 - **Stdlib only** — zero pip dependencies
 - **stdin/stdout contract** — scripts read nothing from stdin; stdout is reserved for results; stderr for diagnostics
-- **Exit code convention** — `0` = pass (or soft warning), `1` = hard block
+- **Exit code convention** — `0` = pass (or soft warning), `2` = hard block
 - **Keep it small** — the entire project is ~400 lines. A PR adding >100 lines needs strong justification
 
 ## PR Process
