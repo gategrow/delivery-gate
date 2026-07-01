@@ -95,6 +95,16 @@ python3 ~/.claude/scripts/config-health.py --check
 
 This checks **process completeness** (did you update your logs?), not **output correctness** (is the code right?). It's a reminder system for habits and learning capture — it doesn't verify code quality or catch logic bugs. For output consistency checks, pair with [self-audit](https://github.com/gategrow/self-audit).
 
+## Part of [gategrow](https://github.com/gategrow)
+
+| Repo | What |
+|------|------|
+| **[checkgrow](https://github.com/gategrow/checkgrow)** | Unified quality framework — start here |
+| **[delivery-gate](https://github.com/gategrow/delivery-gate)** | Stop hook for Claude Code |
+| **[self-audit](https://github.com/gategrow/self-audit)** | `pip install`-able four-dimension audit |
+| **[session-cost](https://github.com/gategrow/session-cost)** | L0→L3 layered cost tracking |
+| **[dual-pool-review](https://github.com/gategrow/dual-pool-review)** | Named-persona adversarial review methodology |
+
 ## License
 
 MIT
