@@ -1,6 +1,7 @@
 # Delivery Gate
 
-A Stop hook for Claude Code. Two Python scripts, zero dependencies, deterministic checks only.
+> 🧩 **Digital Twin OS · 输出层质量门禁** — 自我净化闭环的最后一道物理拦截闸.
+> A Stop hook for Claude Code. Two Python scripts, zero dependencies, deterministic checks only.
 
 ```
 config-health（Process Monitor）→ tracks rule execution → soft feedback (never blocks)
