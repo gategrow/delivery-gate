@@ -1,6 +1,6 @@
 # Delivery Gate — Semantic Quality Gate for Claude Code
 
-> ✅ **This module has been merged into [affaan-m/ECC](https://github.com/affaan-m/ECC) (200K+★) via [PR #2377](https://github.com/affaan-m/ECC/pull/2377) & [#2378](https://github.com/affaan-m/ECC/pull/2378), merged by maintainer [affaan-m](https://github.com/affaan-m).** Zero-config loading proposal [PR #2365](https://github.com/affaan-m/ECC/pull/2365) additionally reviewed by core maintainer with positive feedback.
+> ✅ **This module has been merged into [affaan-m/ECC](https://github.com/affaan-m/ECC) (240K+★) via [PR #2377](https://github.com/affaan-m/ECC/pull/2377) & [#2378](https://github.com/affaan-m/ECC/pull/2378), merged by maintainer [affaan-m](https://github.com/affaan-m).**
 
 A **Stop hook** that blocks Claude from finishing until quality checks pass. Unlike verification-loop (which checks build/test/lint), this checks **thinking quality**: did Claude assume something untested? Did it skip documenting a lesson? Is disk space dangerously low?
 
@@ -118,7 +118,7 @@ This module originated from the Hermes Workspace self-model pipeline and was val
 |----|-------------|--------|
 | [#2377](https://github.com/affaan-m/ECC/pull/2377) | Growth-log learning capture module | ✅ Merged by **affaan-m** |
 | [#2378](https://github.com/affaan-m/ECC/pull/2378) | Stop Hook quality gating integration | ✅ Merged by **affaan-m** |
-| [#2365](https://github.com/affaan-m/ECC/pull/2365) | Zero-config delivery-gate plugin loader | 📝 Reviewed — "this is solid work" |
+| [#2365](https://github.com/affaan-m/ECC/pull/2365) | Zero-config delivery-gate plugin loader | 📝 Closed — superseded by #2378 |
 
 The quality-gate.py in this repo is the reference standalone implementation. The merged version in ECC was adapted for the project's plugin architecture.
 
