@@ -20,6 +20,8 @@ import datetime
 import logging
 from typing import Optional
 
+__version__ = '1.0.0'
+
 # ---- Configuration ----
 # Rules to track and their transcript markers
 RULES = {
@@ -575,6 +577,9 @@ def check_mode() -> None:
 # ---- Main ----
 
 def main() -> None:
+    if '--version' in sys.argv:
+        print(f'config-health {__version__}')
+        return
     if '--check' in sys.argv:
         check_mode()
     else:

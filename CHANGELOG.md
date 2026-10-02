@@ -5,6 +5,7 @@ All notable changes to delivery-gate will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- `--version` in both scripts prints the version and exits without running hook or dashboard checks.
 - **config-health.py** — process-layer soft monitor. Counts `[✓MARKER]` rule execution, writes `rule-health.jsonl`, auto-manages `pending-verifications.md`. Never blocks (exit 0 always). Three modes: `--hook` (silent), `--check` (dashboard), `--full` (detailed).
 - **quality-gate.py** — output-layer hard gate. Checks five-library mtime. Blocks at ≥3 stale. Rationalization detection. Disk threshold check.
 

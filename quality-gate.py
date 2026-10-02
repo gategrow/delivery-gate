@@ -18,6 +18,8 @@ import shutil
 import logging
 from typing import Optional
 
+__version__ = '1.0.0'
+
 # ---- Configuration ----
 # Patterns that indicate rationalized incompleteness
 RATIONALIZE = [
@@ -127,6 +129,9 @@ def count_edits(text: str) -> int:
 
 
 def main() -> None:
+    if '--version' in sys.argv:
+        print(f'quality-gate {__version__}')
+        return
     raw = sys.stdin.read()
 
     # Stop-hook contract: echo stdin to stdout so the harness can forward the payload
